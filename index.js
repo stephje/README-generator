@@ -1,6 +1,18 @@
 // Import required modules
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generateMarkdown = require('./utils/generateMarkdown.js');
+
+const licenses = [
+    'MIT',
+    'GNU GPLv3',
+    'GNU AGPLv3',
+    'GNU LGPLv3',
+    'Mozilla Public License 2.0',
+    'Apache License 2.0',
+    'Boost Software License 1.0',
+    'The Unlicense',
+  ];
 
 const questions = [
   {
@@ -60,12 +72,28 @@ function writeToFile(fileName, data) {
   fs.writeFile(fileName, data, (err) =>
     err
       ? console.error(err)
-      : console.log('README file generated and stored in "output" folder')
+      : console.log('README.md file generated successfully')
   );
 }
 
 // TODO: Create a function to initialize app
-function init() {} 
+function init() {
+  inquirer
+    .prompt(questions)
+    .then((answers) => {
+      let markdown = generateMarkdown(answers, licenses);
+      writeToFile('README_gen.md', markdown)
+    })
+    .catch((error) => {
+      if (error.isTtyError) {
+        //Error message for when there is no tty. This is included in the inquirer documentation as an explicit error case
+        console.log('Prompt could not be rendered');
+      } else {
+        //Any other error
+        console.log('An unknown error occurred:', error);
+      }
+    });
+}
 
 // Function call to initialize app
 init();

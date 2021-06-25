@@ -118,8 +118,11 @@ function writeToFile(fileName, data) {
 
 // TODO: Create a function to initialize app
 async function main() {
+
+
     //prompt user for answers to questions and store answers as variable
     let answers = await inquirer.prompt(questions);
+
 
     //Generate the markdown for the README file
     let markdown = generateMarkdown(answers, licenses);

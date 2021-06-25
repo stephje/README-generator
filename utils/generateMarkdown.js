@@ -8,15 +8,14 @@ const badges = {
   'Mozilla Public License 2.0': '[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)',
   'Apache License 2.0': '[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)',
   'Boost Software License 1.0': '[![License: Boost Software License 1.0](https://img.shields.io/badge/License-Boost%201.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)',
-  'The Unlicense': '[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)',
-}
+  'The Unlicense': '[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)'
+};
 
 // Generate the markdown for the README
-function generateMarkdown(answers, licenses) {
-  console.log(answers);
-
+function generateMarkdown(answers) {
   let selectedLicense = answers.license;
-  let badge = badges.selectedLicense;
+  let badge = badges[selectedLicense];
+
   let github = `[GitHub](https://github.com/${answers.username})`;
   let email = `[Email](mailto:${answers.email})`;
 

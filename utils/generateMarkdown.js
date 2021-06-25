@@ -86,7 +86,7 @@ function generateMarkdown(answers) {
 
 ## Screenshot of Deployed Application
 
-  ![Screenshot of Application](${path})
+  ![Screenshot of Application](${answers.path})
 
   
 `;

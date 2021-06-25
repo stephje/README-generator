@@ -65,3 +65,8 @@ Please ensure that you include the name of this project ("readme-generator") in 
 ## Screenshot of Deployed Application
 
 ![Screenshot of Application](./assets/images/screenshot.png)
+
+## Video Walkthrough
+
+Click ![here](https://drive.google.com/file/d/1jqtSiK0AGIt7tEPbcNkT4op6qjeN1qEx/view) to view video walkthrough.
+

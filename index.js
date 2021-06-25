@@ -59,6 +59,18 @@ const questions = [
     },
     {
         type: 'editor',
+        name: 'usage',
+        message: 'Please enter any usage instructions for your project',
+        when: answers => answers.editor === 'Editor',
+    },
+    {
+        type: 'editor',
+        name: 'credits',
+        message: 'Please enter any credits or acknowledgements for your project',
+        when: answers => answers.editor === 'Editor',
+    },
+    {
+        type: 'editor',
         name: 'contribution',
         message:
             'Please enter instructions on how to contribute to your project',
@@ -69,12 +81,6 @@ const questions = [
         name: 'tests',
         message:
             'Please enter instructions on how to run the tests for your project',
-        when: answers => answers.editor === 'Editor',
-    },
-    {
-        type: 'editor',
-        name: 'usage',
-        message: 'Please enter any usage instructions for your project',
         when: answers => answers.editor === 'Editor',
     },
     {
@@ -86,6 +92,18 @@ const questions = [
     },
     {
         type: 'input',
+        name: 'usage',
+        message: 'Please enter any usage instructions for your project',
+        when: answers => answers.editor === 'Basic Inputs',
+    },
+    {
+        type: 'input',
+        name: 'credits',
+        message: 'Please enter any credits or acknowledgements for your project',
+        when: answers => answers.editor === 'Basic Inputs',
+    },
+    {
+        type: 'input',
         name: 'contribution',
         message:
             'Please enter instructions on how to contribute to your project',
@@ -96,12 +114,6 @@ const questions = [
         name: 'tests',
         message:
             'Please enter instructions on how to run the tests for your project',
-        when: answers => answers.editor === 'Basic Inputs',
-    },
-    {
-        type: 'input',
-        name: 'usage',
-        message: 'Please enter any usage instructions for your project',
         when: answers => answers.editor === 'Basic Inputs',
     },
 ];

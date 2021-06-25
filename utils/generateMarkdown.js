@@ -49,6 +49,10 @@ function generateMarkdown(answers) {
 ## License
   
   ${answers.license}
+
+## Credits 
+
+  ${answers.credits}
   
 ## Contributing
   

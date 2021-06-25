@@ -5,7 +5,7 @@ const generateMarkdown = require('./utils/generateMarkdown.js');
 
 //List of common licenses
 const licenses = [
-    'MIT',
+    'MIT License',
     'GNU GPLv3',
     'GNU AGPLv3',
     'GNU LGPLv3',
@@ -40,6 +40,16 @@ const questions = [
     },
     {
         type: 'input',
+        name: 'name',
+        message: 'Please enter your full name',
+    },
+    {
+        type: 'input',
+        name: 'year',
+        message: 'Please enter the current year (e.g. 2021)',
+    },
+    {
+        type: 'input',
         name: 'email',
         message: 'Please enter your email address',
     },
@@ -49,6 +59,12 @@ const questions = [
         name: 'license',
         message: 'Please select a license from the list',
         choices: licenses,
+    },
+    {
+        type: 'input',
+        name: 'screenshot',
+        message: 'Please enter the file path of a screenshot of your deployed application, relative to the project root folder. Include the file name and file extension! Default is ./assets/images/screenshot.png',
+        default: './assets/images/screenshot.png',
     },
     {
         type: 'editor',
@@ -131,10 +147,8 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 async function main() {
 
-
     //prompt user for answers to questions and store answers as variable
     let answers = await inquirer.prompt(questions);
-
 
     //Generate the markdown for the README file
     let markdown = generateMarkdown(answers, licenses);

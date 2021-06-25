@@ -62,7 +62,7 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'screenshot',
+        name: 'path',
         message: 'Please enter the file path of a screenshot of your deployed application, relative to the project root folder. Include the file name and file extension! Default is ./assets/images/screenshot.png',
         default: './assets/images/screenshot.png',
     },
@@ -95,8 +95,7 @@ const questions = [
     {
         type: 'editor',
         name: 'tests',
-        message:
-            'Please enter instructions on how to run the tests for your project',
+        message: 'Please enter instructions on how to run the tests for your project',
         when: answers => answers.editor === 'Editor',
     },
     {
@@ -128,8 +127,7 @@ const questions = [
     {
         type: 'input',
         name: 'tests',
-        message:
-            'Please enter instructions on how to run the tests for your project',
+        message: 'Please enter instructions on how to run the tests for your project',
         when: answers => answers.editor === 'Basic Inputs',
     },
 ];

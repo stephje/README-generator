@@ -22,6 +22,9 @@ Run 'npm i' from the command line to install required packages.
 
 ## Usage
 
+Run 'node index.js' to initialize and answer prompts. Output is saved to a file called 'Generated_README.md' in the root folder.
+
+#### TEXT EDITORS: 
 This README generator provides the option to use a text editor rather than basic command line inputs for sections of the README that are likely to require multi-line input.
 
 If the option to use a text editor is selected, a temporary file will be created in the user's selected editor. This file is read in when the user exits the editor.
@@ -30,7 +33,8 @@ If no specific editor has been set, then notepad (on Windows) or VIM (Linux or M
 
 If you are running this program in an environment such as a Docker container or similar, please ensure that you have installed VIM in that environment (i.e. run 'apt-get install vim' for ubuntu-based containers, etc).
 
-NOTE: If no path for an application screenshot is specified at the relevant prompt, the default file location is ./assets/images/screenshot.png
+#### SCREENSHOTS: 
+If no path for an application screenshot is specified at the relevant prompt, the default file location is ./assets/images/screenshot.png
 This can be manually edited or removed in the Generated_README.md file later if need be. 
 
 ## License
